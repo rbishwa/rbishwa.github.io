@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+	>
+
+	<title>Organizing a Python Project</title>
+
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reset.min.css"
+		integrity="sha256-5/N9vOsEFEeDStOZCuE/rpwRcijUVFx6RY5vjx1usCc="
+		crossorigin="anonymous"
+	>
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.min.css"
+		integrity="sha256-OxiHrn+gXudPDHxTvXiQzeFjZU/FllSSPmOOYAZ1O/g="
+		crossorigin="anonymous"
+	>
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/black.min.css"
+		integrity="sha256-FMkhwnY485HRoNNbvFB6F2PHHAfpGSbJQwgGXSCPozM="
+		crossorigin="anonymous"
+	>
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/lib/css/monokai.min.css"
+		integrity="sha256-uvf9pi6d5ovbhC64Go7y0ayuHYniEGnRBinKQ+ykpDY="
+		crossorigin="anonymous"
+	>
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement("link");
+		link.rel = "stylesheet";
+		link.type = "text/css";
+		link.crossOrigin = "anonymous";
+		if ( window.location.search.match(/print-pdf/gi) ) {
+			link.href = "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/print/pdf.min.css";
+			link.integrity = "sha256-F74eHvgjipGQ87S43T5oVShvlphbiOHS0aljitD4sno=";
+		} else {
+			link.href = "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/print/paper.min.css";
+			link.integrity = "sha256-FuQ6abYf/sPwC97y3FCVaj6VTKRPBX9Szj9wT4rkUvk=";
+		}
+		document.getElementsByTagName("head")[0].appendChild(link);
+	</script>
+
+	<!-- Devicon -->
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.2/devicon.min.css"
+		integrity="sha256-4LcvM6Kisp2RIksJbr9MdLdjZrVxALxPqi0SwWmymPI="
+		crossorigin="anonymous"
+	>
+
+	<!-- Adapt slide style -->
+	<style>
+		.reveal section h2 { text-transform: none; }
+		.reveal section img { background:none; border:none; box-shadow:none; }
+	</style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Title slide -->
+<section>
+	<h1>
+		Organizing a Python Project
+	</h1>
+	<p><i class="devicon-python-plain"></i></p>
+	<h2>
+		<div style="font-size: smaller;">
+			<p>Antoine Prouvost</p>
+			<p>Gerad, Feb xx<sup>th</sup> 2020</p>
+		</div>
+	</h2>
+</section>
+
+<section>
+	<h2>RIP Python 2</h2>
+	<img class="stretch" alt="Python2 tombstone" data-src="img/python2-dead.png">
+</section>
+
+</div>
+</div>
+
+<!-- Load the main reveal.js script -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"
+	integrity="sha256-pv4AarTAzSO6lz+bbMPwmV29XMjkzmFOn601b2pWqXE="
+	crossorigin="anonymous"
+></script>
+
+<script>
+	// More info about config & dependencies:
+	// - https://github.com/hakimel/reveal.js#configuration
+	// - https://github.com/hakimel/reveal.js#dependencies
+	function has_markdown() { return !!document.querySelector("[data-markdown]"); }
+	Reveal.initialize({
+		hash: true,
+		dependencies: [
+			{
+				src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/highlight/highlight.min.js",
+				async: true
+			},
+			{
+				src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/markdown/marked.js",
+				condition: has_markdown
+			},
+			{
+				src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/markdown/markdown.min.js",
+				condition: has_markdown
+			},
+			{src: "plugin/notes/notes.js", async: true}
+		]
+	});
+</script>
+</body>
+</html>
