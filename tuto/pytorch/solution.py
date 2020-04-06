@@ -188,7 +188,7 @@ def evaluate_on_batch(logits: torch.Tensor, targets: torch.Tensor) -> Dict[str, 
     """
     return {
         "Loss": F.cross_entropy(logits, targets).item(),
-        "Accuracy": accuracy_from_logits(logits, targets).item(),
+        "Accuracy": accuracy_from_logits(logits, targets),
     }
 
 
