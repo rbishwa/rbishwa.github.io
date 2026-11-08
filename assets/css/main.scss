@@ -109,3 +109,28 @@
     li a { margin-bottom: 0; }
   }
 }
+
+/* Prominent profile buttons on About/home */
+.profile-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  margin: 0.5em 0 1.6em;
+}
+.profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.55em 1.1em;
+  border-radius: 8px;
+  border: 1px solid var(--global-border-color, #d0d4da);
+  color: var(--global-text-color) !important;
+  font-size: 0.85em;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: transform .15s, box-shadow .15s;
+  i { font-size: 1.15em; }
+  &:hover { transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0,0,0,.12); }
+  &.scholar { background: #4285f4; border-color: #4285f4; color: #fff !important; }
+  &.linkedin { background: #0a66c2; border-color: #0a66c2; color: #fff !important; }
+}

@@ -6,6 +6,8 @@ redirect_from:
   - /about.html
 ---
 
+{% include profile-buttons.html %}
+
 I am a Ph.D. candidate in Chemical and Biomolecular Engineering at **Johns Hopkins University**, advised by Prof. Konstantinos Konstantopoulos, and an experimentalist with 7+ years of research in quantitative imaging, hydrogels, polymer systems and cell mechanobiology.
 
 Research
