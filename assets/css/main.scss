@@ -59,3 +59,53 @@
   .pub-with-image { flex-direction: column; }
   .pub-with-image .pub-thumb, .pub-with-image .pub-thumb img { width: 100%; max-width: 360px; flex-basis: auto; }
 }
+
+/* Sidebar: keep it in view but let it scroll when it is taller than the screen */
+@media screen and (min-width: 1024px) and (max-height: 759px) {
+  .sidebar {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    max-height: none;
+    overflow: visible;
+  }
+}
+@media screen and (min-width: 1024px) and (min-height: 760px) {
+  .sidebar {
+    position: sticky;
+    top: 0;
+    bottom: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 2em;
+  }
+}
+
+/* Footer sits at the end of the page instead of covering the bottom of the screen */
+.page__footer {
+  position: relative;
+  bottom: auto;
+}
+
+/* Always show the profile links instead of hiding them behind a "Follow" button */
+.author__urls-wrapper button { display: none !important; }
+.author__urls-wrapper { display: block; }
+.author__urls {
+  display: block !important;
+  position: static;
+  margin: 0.5em 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  z-index: auto;
+  &:before, &:after { display: none !important; }
+}
+@media screen and (max-width: 924px) {
+  .author__urls {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 0.25em 1.1em;
+    li a { margin-bottom: 0; }
+  }
+}
