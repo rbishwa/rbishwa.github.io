@@ -1,0 +1,61 @@
+---
+---
+
+/*
+ * This file controls what is imported from /_sass
+ *
+ * Note that the files are processed in the order they are imported, so they are partly
+   sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
+ */
+
+@import
+    "vendor/breakpoint/breakpoint",
+
+    "themes",
+    "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
+    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
+
+    "include/mixins",
+    "vendor/susy/susy",
+
+    "layout/reset",
+    "layout/base",
+
+    "include/utilities",
+    "layout/tables",
+    "layout/buttons",
+    "layout/notices",
+    "layout/masthead",
+    "layout/navigation",
+    "layout/footer",
+    "syntax",
+
+    "layout/forms",
+
+    "layout/page",
+    "layout/archive",
+    "layout/sidebar"
+;
+/* Publication thumbnails */
+.pub-with-image {
+  display: flex;
+  gap: 1.25em;
+  align-items: flex-start;
+}
+.pub-with-image .pub-thumb {
+  flex: 0 0 180px;
+  margin-top: 0.4em;
+}
+.pub-with-image .pub-thumb img {
+  width: 180px;
+  max-height: 200px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 6px;
+  border: 1px solid var(--global-border-color, #e0e0e0);
+}
+.pub-with-image .pub-body { flex: 1; min-width: 0; }
+@media (max-width: 600px) {
+  .pub-with-image { flex-direction: column; }
+  .pub-with-image .pub-thumb, .pub-with-image .pub-thumb img { width: 100%; max-width: 360px; flex-basis: auto; }
+}
