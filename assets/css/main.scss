@@ -134,3 +134,33 @@
   &.scholar { background: #4285f4; border-color: #4285f4; color: #fff !important; }
   &.linkedin { background: #0a66c2; border-color: #0a66c2; color: #fff !important; }
 }
+
+/* Larger profile header on phones and tablets */
+@media screen and (max-width: 924px) {
+  .sidebar { margin-top: 1.2em; }
+  .author__avatar {
+    width: 92px;
+    img { width: 92px; height: 92px; object-fit: cover; }
+  }
+  .author__content {
+    vertical-align: middle;
+    padding-left: 18px;
+    padding-right: 0;
+    line-height: 1.35;
+  }
+  .sidebar .author__name {
+    font-size: 1.45em;
+    margin-bottom: 0.2em;
+  }
+  .sidebar .author__bio,
+  .sidebar .author__bio p,
+  .sidebar p.author__bio {
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+  .author__urls {
+    font-size: 1.05em;
+    margin-top: 0.9em;
+    li, a { font-size: 1em !important; }
+  }
+}
