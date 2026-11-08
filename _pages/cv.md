@@ -9,6 +9,13 @@ redirect_from:
 
 {% include base_path %}
 
+<p><a class="btn btn--primary" href="{{ base_path }}/files/Bishwa_Ranjan_Si_CV.pdf" download><i class="fas fa-file-pdf" aria-hidden="true"></i> Download CV (PDF)</a>
+<a class="btn btn--inverse" href="{{ base_path }}/files/Bishwa_Ranjan_Si_CV.pdf" target="_blank" rel="noopener">Open in new tab</a></p>
+
+<object data="{{ base_path }}/files/Bishwa_Ranjan_Si_CV.pdf" type="application/pdf" width="100%" height="900" style="border:1px solid #e0e0e0;border-radius:6px;margin-bottom:2em">
+  <p>Your browser can't display the PDF here. <a href="{{ base_path }}/files/Bishwa_Ranjan_Si_CV.pdf">Download the CV</a> instead.</p>
+</object>
+
 Education
 ======
 * **Ph.D., Chemical and Biomolecular Engineering**, Johns Hopkins University, Baltimore, MD. Expected Dec 2026
