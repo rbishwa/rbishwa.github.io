@@ -16,6 +16,6 @@ Highlights
 ------
 * **2026**: *Extracellular Fluid Viscosity Regulates Cancer Cell Invasion Through KCC4-Dependent Signaling* accepted in *Science Advances* (first author).
 * **2026**: Co-authored work accepted in *Nature Cell Biology*.
-* **2026**: Oral presentation at the BMES Annual Meeting, Orlando, FL.
+* **2026**: Oral presentations at the BMES Annual Meeting (Orlando, FL) and the AIChE Annual Meeting (Minneapolis, MN).
 * **2025**: Oral presentation at the AIChE Annual Meeting and poster at the BMES Annual Meeting.
 * **2023**: Received the CDI Travel Award, Johns Hopkins University.
