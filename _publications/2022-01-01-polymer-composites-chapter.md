@@ -1,6 +1,8 @@
 ---
 title: 'Morphology of Nanoparticle-Based Polymer Composites'
 collection: publications
+image: polymer-composites-chapter.jpg
+image_note: 'Schematic illustration created for this website; not a figure from the publication.'
 category: books
 permalink: /publication/2022-01-01-polymer-composites-chapter
 date: 2022-01-01

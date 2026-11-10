@@ -1,6 +1,8 @@
 ---
 title: 'Self-Propelled Janus Colloids in Shear Flow'
 collection: publications
+image: janus-colloids-shear.jpg
+image_note: 'Schematic illustration created for this website; not a figure from the publication.'
 category: manuscripts
 permalink: /publication/2020-09-01-janus-colloids-shear
 date: 2020-09-01

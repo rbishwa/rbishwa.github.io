@@ -50,8 +50,8 @@ layout: default
 
       <section class="page__content" itemprop="text">
         {% if page.collection == 'publications' and page.image %}
-        <p><img src="{{ base_path }}/images/publications/{{ page.image }}" alt="Figure from {{ page.title | strip_html | escape }}" style="max-width:100%;border-radius:6px"></p>
-        <p style="font-size:0.8em;color:#777;margin-top:-0.5em">{% if page.image_caption %}{{ page.image_caption }} {% endif %}Reproduced from the publication; see the citation below.</p>
+        <p><img src="{{ base_path }}/images/publications/{{ page.image }}" alt="{% if page.image_note %}Illustration for{% else %}Figure from{% endif %} {{ page.title | strip_html | escape }}" style="max-width:100%;border-radius:6px"></p>
+        <p style="font-size:0.8em;color:#777;margin-top:-0.5em">{% if page.image_note %}{{ page.image_note }}{% else %}{% if page.image_caption %}{{ page.image_caption }} {% endif %}Reproduced from the publication; see the citation below.{% endif %}</p>
         {% endif %}
         {{ content }}
 
