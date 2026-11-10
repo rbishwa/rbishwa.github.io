@@ -39,7 +39,7 @@ layout: default
         {% elsif page.collection == 'publications' and page.status %}
           <p>{{ page.status }}</p>
         {% elsif page.collection == 'talks' %}
-          <p>{{ page.type }}, <i>{{ page.venue }}</i>{% if page.location %}, {{ page.location }}{% endif %}, {{ page.date | date: "%B %Y" }}</p>
+          <p>{{ page.type }}, <i>{{ page.venue }}</i>{% if page.location %}, {{ page.location }}{% endif %}, {% if page.year_only %}{{ page.date | date: "%Y" }}{% else %}{{ page.date | date: "%B %Y" }}{% endif %}</p>
         {% elsif page.venue and page.date %}
           <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.date %}

@@ -8,5 +8,5 @@ permalink: /publication/2024-01-01-nucleus-ion-channel
 date: 2024-01-01
 venue: 'Trends in Cell Biology'
 paperurl: 'https://doi.org/10.1016/j.tcb.2024.01.001'
-citation: 'Mistriotis P, Wisniewski EO, <b>Si BR</b>, Kalab P, Konstantopoulos K. (2024). &quot;Coordinated in confined migration: crosstalk between the nucleus and ion channel-mediated mechanosensation.&quot; <i>Trends in Cell Biology</i> 34, 809–825.'
+citation: 'Mistriotis P, Wisniewski EO, <b>Si BR</b>, Kalab P, Konstantopoulos K. Coordinated in confined migration: crosstalk between the nucleus and ion channel-mediated mechanosensation. <b><i>Trends in Cell Biology</i>. 2024</b> Oct;34(10):809-825. doi:10.1016/j.tcb.2024.01.001. PMID: 38290913; PMCID: PMC11284253. (Review)'
 ---
