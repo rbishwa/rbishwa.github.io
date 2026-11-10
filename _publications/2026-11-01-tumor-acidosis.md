@@ -1,8 +1,6 @@
 ---
 title: 'Rethinking Tumor Acidosis: Driver, Brake, or Adaptive Challenge?'
 collection: publications
-image: tumor-acidosis.jpg
-image_note: 'Schematic illustration created for this website; not a figure from the publication.'
 category: preprints
 permalink: /publication/2026-11-01-tumor-acidosis
 date: 2026-11-01

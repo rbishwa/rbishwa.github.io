@@ -1,8 +1,6 @@
 ---
 title: 'Extracellular Fluid Viscosity Regulates Cancer Cell Invasion Through KCC4-Dependent Signaling'
 collection: publications
-image: viscosity-kcc4.jpg
-image_note: 'Schematic illustration created for this website; not a figure from the publication.'
 category: manuscripts
 permalink: /publication/2026-10-01-viscosity-kcc4
 date: 2026-10-01

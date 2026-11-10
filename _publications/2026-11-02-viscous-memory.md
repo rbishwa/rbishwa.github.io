@@ -1,8 +1,6 @@
 ---
 title: 'Viscous Memory Regulates Cancer Cell Invasion In Vitro and In Vivo'
 collection: publications
-image: viscous-memory.jpg
-image_note: 'Schematic illustration created for this website; not a figure from the publication.'
 category: preprints
 permalink: /publication/2026-11-02-viscous-memory
 date: 2026-11-02

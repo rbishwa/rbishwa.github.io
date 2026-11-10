@@ -1,8 +1,6 @@
 ---
 title: 'Mechanochemical Cues Control the Coupling of Metabolic and Migratory Patterns in Cancer'
 collection: publications
-image: mechanochemical-metabolic.jpg
-image_note: 'Schematic illustration created for this website; not a figure from the publication.'
 category: manuscripts
 permalink: /publication/2026-09-01-mechanochemical-metabolic
 date: 2026-09-01
