@@ -1,6 +1,8 @@
 ---
 title: 'Anionic Lipid Trafficking and Cell Mechanics Regulate Membrane Electrical Potential in Non-Excitable Tissue Cells'
 collection: publications
+image: anionic-lipid.jpg
+image_caption: 'Figure 1: spatial distribution of membrane potential in non-excitable cells, mapped with the JEDI-2P voltage sensor on 2D glass and in 3D collagen gels.'
 category: preprints
 permalink: /publication/2025-11-25-anionic-lipid
 date: 2025-11-25

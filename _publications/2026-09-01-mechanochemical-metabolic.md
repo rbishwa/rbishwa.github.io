@@ -1,6 +1,8 @@
 ---
 title: 'Mechanochemical Cues Control the Coupling of Metabolic and Migratory Patterns in Cancer'
 collection: publications
+image: mechanochemical-metabolic.jpg
+image_caption: 'Figure 1: Arp3, ILK, and &beta;1-integrin drive migration in soft microchannels.'
 category: manuscripts
 permalink: /publication/2026-09-01-mechanochemical-metabolic
 date: 2026-09-01
