@@ -1,6 +1,7 @@
 ---
 permalink: /
 title: "Bishwa Ranjan Si"
+seo_title: "Bishwa Ranjan Si | Johns Hopkins University"
 author_profile: true
 ---
 
