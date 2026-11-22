@@ -1,0 +1,21 @@
+# Homepage banner slideshow.
+#
+# Images cross-fade automatically. Order here is the order shown.
+# `image` is relative to /images/. `alt` should describe the figure for
+# screen readers and for when the image fails to load.
+#
+# Wide (landscape) figures work best - the banner crops to a 2.4:1 strip,
+# so portrait or square figures lose their top and bottom.
+#
+# Timing is controlled in _includes/banner.html (--brs-slide-seconds).
+
+- image: publications/galvanin.jpg
+  alt: "Galvanin figure: cell response to an applied electric field"
+- image: publications/in-vitro-platforms.jpg
+  alt: "In vitro platforms for studying confined cell migration"
+- image: publications/nucleus-ion-channel.jpg
+  alt: "Nuclear ion channel involvement in mechanotransduction"
+- image: publications/jittery-droplets.jpg
+  alt: "Jittery droplets: active droplet motion in a surfactant solution"
+- image: publications/e-cadherin-serine.jpg
+  alt: "E-cadherin serine phosphorylation at cell-cell junctions"
