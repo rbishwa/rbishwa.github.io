@@ -135,7 +135,7 @@ atom_feed:
 # SEO Related
 # Paste the token from Google Search Console > Add property > HTML tag here
 # (just the content="..." value, not the whole tag).
-google_site_verification :
+google_site_verification : "M2j6vmmS8O0HUNOWO2nqxKdFTRwLrP4WxJ5jCGocgbs"
 bing_site_verification   :
 alexa_site_verification  :
 yandex_site_verification :
