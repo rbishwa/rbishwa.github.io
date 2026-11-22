@@ -1,0 +1,67 @@
+{% comment %} ===== Site-wide colour accents =====
+A small amount of colour so pages don't read as flat black-on-white.
+Loaded from head.html, so it applies to every page.
+
+Hues are mid-tone on purpose: they stay legible on both the light and dark
+site themes, and the dark-scheme block lifts them for contrast.
+
+Note the :not(.archive__item-title) guards. Publication, talk and teaching
+listings render each entry's title as an h2, and without the guard every
+entry in those lists would pick up the heading colour and underline bar.
+{% endcomment %}
+
+<style>
+  :root {
+    --brs-accent:      #1668b8;  /* deep blue - headings, key phrases */
+    --brs-accent-soft: #117a8b;  /* teal - year labels, bullet markers */
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --brs-accent:      #6cb6f5;
+      --brs-accent-soft: #4fc3d4;
+    }
+  }
+
+  /* Page and section headings. */
+  .page__content h1,
+  .page__content h2:not(.archive__item-title),
+  .page__content h3:not(.archive__item-title) {
+    color: var(--brs-accent);
+  }
+
+  /* Short underline bar under section headings only - not list entries,
+     and not h3, which would get noisy on the CV. */
+  .page__content h2:not(.archive__item-title) {
+    position: relative;
+    border-bottom: 0;
+    padding-bottom: .15em;
+    margin-bottom: .9em;
+  }
+  .page__content h2:not(.archive__item-title)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2.25em;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--brs-accent);
+  }
+
+  /* Bold phrases in body paragraphs. */
+  .page__content > p strong {
+    color: var(--brs-accent);
+    font-weight: 650;
+  }
+
+  /* Leading label on a list item - the year on a highlight or CV entry. */
+  .page__content li > strong:first-child {
+    color: var(--brs-accent-soft);
+    font-weight: 700;
+    letter-spacing: .01em;
+  }
+
+  .page__content ul li::marker {
+    color: var(--brs-accent-soft);
+  }
+</style>
