@@ -1,0 +1,76 @@
+{% comment %} ===== Homepage banner slideshow =====
+Cross-fading strip of research figures. Slides come from _data/banner.yml.
+
+Pure CSS: every slide runs the same keyframe animation over the full cycle
+(slides x slide_seconds, set below) and is offset by animation-delay, so only one
+is opaque at a time. No JavaScript, no library, nothing to keep updated.
+{% endcomment %}
+
+{% include base_path %}
+{% assign slides = site.data.banner %}
+{% if slides and slides.size > 0 %}
+{% assign slide_seconds = 5 %}
+{% assign cycle = slides.size | times: slide_seconds %}
+{% comment %} Share of the cycle one slide holds at full opacity. The 3% crossfade
+below assumes this stays comfortably above 3, i.e. no more than ~10 slides. {% endcomment %}
+{% assign hold = 100 | divided_by: slides.size %}
+
+<style>
+  .brs-banner {
+    /* Tweak these two to change the look. */
+    --brs-ratio: 2.1;            /* width : height of the strip */
+    --brs-cycle: {{ cycle }}s;   /* full loop = slides x seconds each */
+
+    position: relative;
+    width: 100%;
+    aspect-ratio: var(--brs-ratio);
+    max-height: 340px;
+    margin: 0 0 1.75em;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #0d1b2a;         /* shows through while images load */
+  }
+
+  .brs-banner__slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: brs-banner-fade var(--brs-cycle) linear infinite;
+  }
+
+  /* One slide visible at a time: fade in, hold, fade out, stay hidden.
+     Percentages are of the whole cycle, so they adapt to the slide count. */
+  @keyframes brs-banner-fade {
+    0%                                             { opacity: 0; }
+    3%                                             { opacity: 1; }
+    {{ hold }}%                                    { opacity: 1; }
+    {{ hold | plus: 3 }}%                          { opacity: 0; }
+    100%                                           { opacity: 0; }
+  }
+
+  /* Respect a reader's motion preference: hold the first figure, no cycling. */
+  @media (prefers-reduced-motion: reduce) {
+    .brs-banner__slide { animation: none; opacity: 0; }
+    .brs-banner__slide:first-child { opacity: 1; }
+  }
+
+  @media (max-width: 600px) {
+    .brs-banner { --brs-ratio: 1.7; border-radius: 4px; }
+  }
+</style>
+
+<div class="brs-banner">
+  {% for slide in slides %}
+    <img
+      class="brs-banner__slide"
+      src="{{ slide.image | prepend: '/images/' | prepend: base_path }}"
+      alt="{{ slide.alt | escape }}"
+      style="animation-delay: {{ forloop.index0 | times: slide_seconds }}s; object-position: {{ slide.position | default: 'center' }};"
+      {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+      decoding="async">
+  {% endfor %}
+</div>
+{% endif %}

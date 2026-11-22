@@ -5,6 +5,9 @@ seo_title: "Bishwa Ranjan Si | Johns Hopkins University"
 author_profile: true
 ---
 
+{% include banner.html %}
+{% include home-accents.html %}
+
 {% include profile-buttons.html %}
 
 I am a Ph.D. candidate in Chemical and Biomolecular Engineering at **Johns Hopkins University**, advised by Prof. Konstantinos Konstantopoulos. I study how microenvironmental cues (**viscosity, confinement, stiffness and electric fields**) regulate cancer cell migration, using tunable hydrogels, microfluidics, quantitative fluorescence microscopy, optogenetics and zebrafish xenografts.

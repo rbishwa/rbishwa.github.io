@@ -1,0 +1,62 @@
+{% comment %} ===== Homepage text accents =====
+Small amount of colour so the homepage doesn't read as flat black-on-white.
+Only included on the homepage, so no other page is affected.
+
+Hues are mid-tone on purpose: they stay legible on both the light and dark
+site themes. The dark-scheme block lifts them for contrast.
+{% endcomment %}
+
+<style>
+  :root {
+    --brs-accent:      #1668b8;  /* deep blue - headings, key phrases */
+    --brs-accent-soft: #117a8b;  /* teal - year labels */
+    --brs-rule:        #1668b8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --brs-accent:      #6cb6f5;
+      --brs-accent-soft: #4fc3d4;
+      --brs-rule:        #6cb6f5;
+    }
+  }
+
+  /* Section headings ("Highlights") get colour and a short underline bar. */
+  .page__content h1,
+  .page__content h2 {
+    color: var(--brs-accent);
+    border-bottom: 0;
+    padding-bottom: .15em;
+  }
+  .page__content h2 {
+    position: relative;
+    margin-bottom: .9em;
+  }
+  .page__content h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2.25em;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--brs-rule);
+  }
+
+  /* Bold phrases in body paragraphs - the institution, the research cues. */
+  .page__content > p strong {
+    color: var(--brs-accent);
+    font-weight: 650;
+  }
+
+  /* Year labels leading each highlight bullet. */
+  .page__content li > strong:first-child {
+    color: var(--brs-accent-soft);
+    font-weight: 700;
+    letter-spacing: .01em;
+  }
+
+  /* Highlight bullets: a tinted marker instead of a plain grey dot. */
+  .page__content ul li::marker {
+    color: var(--brs-accent-soft);
+  }
+</style>
