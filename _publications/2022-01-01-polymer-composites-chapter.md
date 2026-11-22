@@ -1,6 +1,8 @@
 ---
 title: 'Morphology of Nanoparticle-Based Polymer Composites'
 collection: publications
+image: polymer-composites-chapter.jpg
+image_caption: 'Grafting routes for tethering polymer chains to nanoparticle surfaces: &quot;graft-to&quot; attachment of pre-formed chains versus &quot;graft-from&quot; polymerization at surface reactive sites.'
 category: books
 permalink: /publication/2022-01-01-polymer-composites-chapter
 date: 2022-01-01
