@@ -6,6 +6,7 @@ author_profile: true
 ---
 
 {% include banner.html %}
+{% include home-accents.html %}
 
 {% include profile-buttons.html %}
 

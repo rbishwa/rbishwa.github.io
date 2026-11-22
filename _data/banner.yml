@@ -1,21 +1,23 @@
 # Homepage banner slideshow.
 #
-# Images cross-fade automatically. Order here is the order shown.
-# `image` is relative to /images/. `alt` should describe the figure for
-# screen readers and for when the image fails to load.
+# Images cross-fade automatically, in the order listed here.
+#   image    - path relative to /images/
+#   alt      - description for screen readers and for when the image fails to load
+#   position - optional CSS object-position; which part of the photo survives the
+#              crop. Default is "center". The banner is a wide strip, so a 3:2
+#              photo loses roughly a quarter of its height - lower percentages
+#              keep more of the top, which is usually where heads are.
 #
-# Wide (landscape) figures work best - the banner crops to a 2.4:1 strip,
-# so portrait or square figures lose their top and bottom.
-#
-# Timing is controlled in _includes/banner.html (--brs-slide-seconds).
+# Timing lives in _includes/banner.html (slide_seconds).
 
-- image: publications/galvanin.jpg
-  alt: "Galvanin figure: cell response to an applied electric field"
-- image: publications/in-vitro-platforms.jpg
-  alt: "In vitro platforms for studying confined cell migration"
-- image: publications/nucleus-ion-channel.jpg
-  alt: "Nuclear ion channel involvement in mechanotransduction"
-- image: publications/jittery-droplets.jpg
-  alt: "Jittery droplets: active droplet motion in a surfactant solution"
-- image: publications/e-cadherin-serine.jpg
-  alt: "E-cadherin serine phosphorylation at cell-cell junctions"
+- image: banner/illuminated-tube-rack.jpg
+  alt: "Bishwa Ranjan Si at an illuminated rack of conical tubes in the lab"
+  position: "center 4%"
+
+- image: banner/pipette-bench.jpg
+  alt: "Bishwa Ranjan Si setting a micropipette at the lab bench"
+  position: "center 22%"
+
+- image: banner/cell-culture-hood.jpg
+  alt: "Bishwa Ranjan Si pipetting into a culture flask inside a biosafety cabinet"
+  position: "center 34%"

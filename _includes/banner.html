@@ -18,13 +18,13 @@ below assumes this stays comfortably above 3, i.e. no more than ~10 slides. {% e
 <style>
   .brs-banner {
     /* Tweak these two to change the look. */
-    --brs-ratio: 2.4;            /* width : height of the strip */
+    --brs-ratio: 2.1;            /* width : height of the strip */
     --brs-cycle: {{ cycle }}s;   /* full loop = slides x seconds each */
 
     position: relative;
     width: 100%;
     aspect-ratio: var(--brs-ratio);
-    max-height: 300px;
+    max-height: 340px;
     margin: 0 0 1.75em;
     overflow: hidden;
     border-radius: 6px;
@@ -58,7 +58,7 @@ below assumes this stays comfortably above 3, i.e. no more than ~10 slides. {% e
   }
 
   @media (max-width: 600px) {
-    .brs-banner { --brs-ratio: 1.9; border-radius: 4px; }
+    .brs-banner { --brs-ratio: 1.7; border-radius: 4px; }
   }
 </style>
 
@@ -68,7 +68,7 @@ below assumes this stays comfortably above 3, i.e. no more than ~10 slides. {% e
       class="brs-banner__slide"
       src="{{ slide.image | prepend: '/images/' | prepend: base_path }}"
       alt="{{ slide.alt | escape }}"
-      style="animation-delay: {{ forloop.index0 | times: slide_seconds }}s;"
+      style="animation-delay: {{ forloop.index0 | times: slide_seconds }}s; object-position: {{ slide.position | default: 'center' }};"
       {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
       decoding="async">
   {% endfor %}
