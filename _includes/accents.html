@@ -3,7 +3,11 @@ A small amount of colour so pages don't read as flat black-on-white.
 Loaded from head.html, so it applies to every page.
 
 Hues are mid-tone on purpose: they stay legible on both the light and dark
-site themes, and the dark-scheme block lifts them for contrast.
+site themes, and the dark block lifts them for contrast.
+
+This file also sets the page background: a warm off-white in light mode, true
+black in dark mode, in both cases by overriding the theme's own variables
+rather than restyling individual elements.
 
 Note the :not(.archive__item-title) guards. Publication, talk and teaching
 listings render each entry's title as an h2, and without the guard every
@@ -15,12 +19,33 @@ entry in those lists would pick up the heading colour and underline bar.
     --brs-accent:      #1668b8;  /* deep blue - headings, key phrases */
     --brs-accent-soft: #117a8b;  /* teal - year labels, bullet markers */
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --brs-accent:      #6cb6f5;
-      --brs-accent-soft: #4fc3d4;
-    }
+
+  /* Warm off-white page background instead of pure white. The theme paints
+     the body, masthead and sidebar from --global-bg-color, so overriding the
+     one variable carries the whole page. Light mode only: the :not() guard
+     keeps the dark theme's own background intact. The footer is nudged to a
+     matching warm grey so it still reads as a distinct band. */
+  html:not([data-theme="dark"]) {
+    --global-bg-color        : #faf9f7;
+    --global-footer-bg-color : #f1efea;
   }
+  /* This theme switches with html[data-theme="dark"], not with the OS
+     preference, so key off that. A media query here would have lightened the
+     accents for anyone whose system is dark while the site was still light,
+     leaving pale blue on a pale background. */
+  html[data-theme="dark"] {
+    --brs-accent:      #6cb6f5;
+    --brs-accent-soft: #4fc3d4;
+
+    /* True black rather than the theme's #474747 grey. The body, masthead,
+       sidebar and footer all paint from these two variables. */
+    --global-bg-color        : #000;
+    --global-footer-bg-color : #000;
+  }
+
+  /* The banner's loading backdrop is a dark navy, which reads as a blue box
+     against true black. Match it. */
+  html[data-theme="dark"] .brs-banner { background: #000; }
 
   /* Page and section headings. */
   .page__content h1,
