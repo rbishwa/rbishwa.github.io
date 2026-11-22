@@ -6,8 +6,17 @@
 {% endif %}
 {% assign seo_url = seo_url | default: site.github.url %}
 
-{% if page.title %}
-  {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title %}
+{% comment %} A page may set its own `seo_title` to fully control the <title> tag.
+Otherwise the page title is suffixed with the site title, unless they are identical
+(which would otherwise render as "Name - Name" on the homepage). {% endcomment %}
+{% if page.seo_title %}
+  {% assign seo_title = page.seo_title %}
+{% elsif page.title %}
+  {% if page.title == site.title %}
+    {% assign seo_title = page.title %}
+  {% else %}
+    {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title %}
+  {% endif %}
 {% endif %}
 {% if seo_title %}
   {% assign seo_title = seo_title | markdownify | strip_html | strip_newlines | escape_once %}
@@ -104,17 +113,33 @@ Twitter username (site.twitter.username), matching upstream behavior.
   <link rel="next" href="{{ paginator.next_page_path | prepend: seo_url }}">
 {% endif %}
 
-{% if site.social %}
-  <script type="application/ld+json">
-    {
-      "@context" : "http://schema.org",
-      "@type" : "{% if site.social.type %}{{ site.social.type }}{% else %}Person{% endif %}",
-      "name" : "{{ site.social.name | default: site.name }}",
-      "url" : {{ seo_url | jsonify }},
-      "sameAs" : {{ site.social.links | jsonify }}
-    }
-  </script>
-{% endif %}
+{% comment %} ===== Person structured data =====
+Tells search engines that this site is the authoritative page for this person, and
+links it to their other profiles via sameAs. Built from site.author in _config.yml.
+{% endcomment %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "{{ site.social.type | default: "Person" }}",
+    "@id": {{ seo_url | append: "/#person" | jsonify }},
+    "mainEntityOfPage": {{ seo_url | append: "/" | jsonify }},
+    "name": {{ site.social.name | default: site.author.name | default: site.name | jsonify }},
+    "url": {{ seo_url | append: "/" | jsonify }},
+    {% if site.author.avatar %}"image": {{ site.author.avatar | prepend: "/images/" | prepend: seo_url | jsonify }},
+    {% endif %}{% if site.author.bio %}"description": {{ site.author.bio | strip_html | strip_newlines | jsonify }},
+    {% endif %}{% if site.author.job_title %}"jobTitle": {{ site.author.job_title | jsonify }},
+    {% endif %}{% if site.author.email %}"email": {{ site.author.email | prepend: "mailto:" | jsonify }},
+    {% endif %}{% if site.author.employer %}"affiliation": {
+      "@type": "Organization",
+      "name": {{ site.author.employer | jsonify }}
+    },
+    {% endif %}{% if site.author.location %}"address": {
+      "@type": "PostalAddress",
+      "addressLocality": {{ site.author.location | jsonify }}
+    },
+    {% endif %}"sameAs": {% if site.social.links %}{{ site.social.links | jsonify }}{% else %}[]{% endif %}
+  }
+</script>
 
 {% if site.google_site_verification %}
   <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
@@ -154,13 +179,5 @@ Twitter username (site.twitter.username), matching upstream behavior.
   {% endif %}
 {% endif %}
 
-{% if site.og_image %}
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": {{ seo_url | jsonify }},
-      "logo": {{ site.og_image | prepend: "/images/" | prepend: base_path | jsonify }}
-    }
-  </script>
-{% endif %}
+{% comment %} The upstream theme emitted an Organization entity here. Removed: this is a
+personal site, and declaring it an Organization competes with the Person entity above. {% endcomment %}
