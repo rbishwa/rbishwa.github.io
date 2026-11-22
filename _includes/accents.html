@@ -5,7 +5,7 @@ Loaded from head.html, so it applies to every page.
 Hues are mid-tone on purpose: they stay legible on both the light and dark
 site themes, and the dark block lifts them for contrast.
 
-This file also sets the page background: a warm off-white in light mode, true
+This file also sets the page background: a soft cream in light mode, true
 black in dark mode, in both cases by overriding the theme's own variables
 rather than restyling individual elements.
 
@@ -20,14 +20,14 @@ entry in those lists would pick up the heading colour and underline bar.
     --brs-accent-soft: #117a8b;  /* teal - year labels, bullet markers */
   }
 
-  /* Warm off-white page background instead of pure white. The theme paints
+  /* Soft cream page background instead of pure white. The theme paints
      the body, masthead and sidebar from --global-bg-color, so overriding the
      one variable carries the whole page. Light mode only: the :not() guard
      keeps the dark theme's own background intact. The footer is nudged to a
-     matching warm grey so it still reads as a distinct band. */
+     deeper shade of the same hue so it still reads as a distinct band. */
   html:not([data-theme="dark"]) {
-    --global-bg-color        : #faf9f7;
-    --global-footer-bg-color : #f1efea;
+    --global-bg-color        : #fdfaef;
+    --global-footer-bg-color : #f6f0dd;
   }
   /* This theme switches with html[data-theme="dark"], not with the OS
      preference, so key off that. A media query here would have lightened the
